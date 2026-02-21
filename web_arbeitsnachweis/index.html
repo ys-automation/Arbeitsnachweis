@@ -1,0 +1,191 @@
+﻿<!doctype html>
+<html lang="de" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#121920" />
+    <title>Arbeitsnachweis Web</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero card" style="--delay: 40ms">
+        <div class="hero-top">
+          <p class="eyebrow">Web-Version</p>
+          <div class="hero-actions">
+            <label class="theme-control" for="themeSelect">
+              Modus
+              <select id="themeSelect" aria-label="Darstellungsmodus">
+                <option value="dark">Dunkel</option>
+                <option value="light">Hell</option>
+              </select>
+            </label>
+            <button id="installBtn" class="install-btn is-hidden" type="button">
+              App installieren
+            </button>
+            <img
+              class="brand-logo"
+              src="assets/logos/transnova_logo.png"
+              alt="Transnova Logo"
+            />
+          </div>
+        </div>
+        <h1>Digitaler Arbeitsnachweis</h1>
+        <p>Wochenübersicht mit automatischer Zeitberechnung.</p>
+        <p>Created by Yasar Sengül. Version 1.1.0</p>
+      </header>
+
+      <section class="card" style="--delay: 100ms">
+        <div class="section-head">
+          <h2>Wochenübersicht</h2>
+          <p class="hint">
+            Beginn/Ende: HH:MM | Pause/Fahrt: HH:MM oder Dezimal (z. B. 0,5)
+          </p>
+          <p class="hint">
+            Eingaben werden pro Kalendertag automatisch gespeichert.
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table id="weekTable">
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th>Beginn</th>
+                <th>Ende</th>
+                <th>Pause</th>
+                <th>Fahrt</th>
+                <th>Arbeitsstunden (auto)</th>
+                <th>Gesamt (auto)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-week-row>
+                <td>Mo</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>Di</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>Mi</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>Do</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>Fr</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>Sa</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+              <tr data-week-row>
+                <td>So</td>
+                <td>
+                  <input data-col="begin" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="end" type="text" autocomplete="off" /></td>
+                <td>
+                  <input data-col="pause" type="text" autocomplete="off" />
+                </td>
+                <td>
+                  <input data-col="travel" type="text" autocomplete="off" />
+                </td>
+                <td><input data-col="work" type="text" readonly /></td>
+                <td><input data-col="total" type="text" readonly /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" style="--delay: 160ms">
+        <h2>Prüfung</h2>
+        <div class="action-bar">
+          <button id="refreshBtn" type="button">
+            Berechnungen aktualisieren
+          </button>
+          <button id="validateBtn" type="button">Eingaben prüfen</button>
+        </div>
+        <p id="statusText" class="status neutral">
+          Noch keine Prüfung ausgeführt.
+        </p>
+        <ul id="errorList" class="error-list"></ul>
+      </section>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

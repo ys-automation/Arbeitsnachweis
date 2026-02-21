@@ -1,0 +1,27 @@
+Techniker: Yasar Sengü
+Personal-Nr.: 
+Auftrags-Nr.: 
+Projekt-Nr.: 
+Kunde: Salutas
+Strasse: 
+Ort: 
+Ansprechpartner: 
+Von: 
+Bis: 
+
+Auszufuehrende Arbeiten:
+vhmcgjkducl,dtulzi
+
+Wochenuebersicht:
+Mo: Beginn=7:00, Ende=17:45, Pause=0,5, Fahrt=4,0, Warte=, Arbeitsstunden=6,25, Gesamt=10,75
+Di: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+Mi: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+Do: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+Fr: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+Sa: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+So: Beginn=, Ende=, Pause=, Fahrt=, Warte=, Arbeitsstunden=, Gesamt=
+
+Reisetabelle:
+Zeile 1: Schl.=1, Datum=17.02.2026, Abf.-Zeit=7:00, von=Ansbach, nach=Barleben, Ank.-Zeit=, Std.=, km=
+Zeile 2: Schl.=, Datum=, Abf.-Zeit=, von=, nach=, Ank.-Zeit=, Std.=, km=
+Zeile 3: Schl.=, Datum=, Abf.-Zeit=, von=, nach=, Ank.-Zeit=, Std.=, km=

@@ -1,0 +1,32 @@
+﻿KOLLEGEN-ANLEITUNG - Arbeitsnachweis Web-App
+
+1) Dateien erhalten
+- Das Paket entpacken (Ordner: web_arbeitsnachweis).
+
+2) App starten
+- start_web_app.bat doppelklicken.
+- Im Browser oeffnet sich die App unter http://localhost:8080/
+
+3) Als Desktop-App installieren (Edge/Chrome)
+- In der App oben auf "App installieren" klicken.
+- Danach kann die App wie ein normales Programm gestartet werden.
+
+4) Nutzung
+- Zeiten in der Wochenuebersicht eintragen.
+- "Berechnungen aktualisieren" fuer automatische Summen.
+- "Eingaben pruefen" fuer Validierung.
+- Eingaben werden pro Kalendertag automatisch gespeichert (lokal im Browser).
+- Optional: Hell/Dunkel ueber den Modus-Schalter oben rechts.
+
+5) Falls etwas nicht aktualisiert ist
+- Browser/Installierte App komplett schliessen und neu oeffnen.
+- Notfalls mit Strg+F5 einmal hart neu laden.
+
+6) Ohne BAT starten (Alternative)
+- Terminal im Ordner web_arbeitsnachweis oeffnen.
+- python -m http.server 8080
+- Dann http://localhost:8080/ aufrufen.
+
+Hinweis
+- Die App ist lokal/offline nutzbar (PWA mit Cache).
+- Es ist kein separates Backend notwendig.
