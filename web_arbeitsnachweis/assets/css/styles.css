@@ -108,6 +108,11 @@ body {
   margin-bottom: 8px;
 }
 
+.hero-brand {
+  display: grid;
+  gap: 2px;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -131,6 +136,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .theme-control {
@@ -164,6 +175,29 @@ h2 {
 h1 {
   margin-top: 2px;
   font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.hero-lead {
+  color: var(--text);
+}
+
+.hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.version-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 9px;
+  color: var(--text);
+  background: rgba(127, 127, 127, 0.08);
+  font-weight: 600;
 }
 
 h2 {

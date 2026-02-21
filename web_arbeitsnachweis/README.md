@@ -1,6 +1,6 @@
 # Weekly Work Report (Arbeitsnachweis Web)
 
-Version: `1.3.0`
+Version: `1.3.1`
 
 Diese PWA ist die Web-Ausfuehrung des Arbeitsnachweises und enthaelt:
 - Wochenuebersicht (ohne Spalte "Warte")

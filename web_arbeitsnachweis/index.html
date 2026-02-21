@@ -4,8 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#121920" />
+    <meta
+      name="description"
+      content="Weekly Work Report: Digitaler Arbeitsnachweis mit Wochenuebersicht, Zeitberechnung und taeglicher Autospeicherung."
+    />
     <title>Weekly Work Report</title>
     <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png" />
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png" />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
@@ -13,7 +19,10 @@
     <main class="page">
       <header class="hero card" style="--delay: 40ms">
         <div class="hero-top">
-          <p class="eyebrow">Web-Version</p>
+          <div class="hero-brand">
+            <p class="eyebrow">Weekly Work Report</p>
+            <p class="hero-subtitle">Arbeitsnachweis Web-App</p>
+          </div>
           <div class="hero-actions">
             <label class="theme-control" for="themeSelect">
               Modus
@@ -33,8 +42,11 @@
           </div>
         </div>
         <h1>Weekly Work Report</h1>
-        <p>Digitaler Arbeitsnachweis mit automatischer Zeitberechnung.</p>
-        <p>Created by Yasar Sengül. Version 1.3.0</p>
+        <p class="hero-lead">Digitaler Arbeitsnachweis mit automatischer Zeitberechnung.</p>
+        <p class="hero-meta">
+          Created by Yasar Sengül
+          <span class="version-pill">v1.3.1</span>
+        </p>
       </header>
 
       <section class="card" style="--delay: 100ms">

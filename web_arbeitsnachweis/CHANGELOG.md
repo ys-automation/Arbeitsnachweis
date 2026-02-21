@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.3.1 - 2026-02-21
+- Branding-Finetuning im Header (klarere Markenzeile, Version-Badge, bessere Meta-Infos).
+- App-Metadaten verbessert (Description + Favicon-Eintraege im HTML).
+- Manifest auf `1.3.1` aktualisiert und `short_name` praezisiert.
+- Service-Worker-Cache auf `arbeitsnachweis-v1-3-1` angehoben.
+
 ## v1.3.0 - 2026-02-21
 - Produktname auf `Weekly Work Report` aktualisiert.
 - Web-Versionen in UI und Manifest auf `1.3.0` angehoben.

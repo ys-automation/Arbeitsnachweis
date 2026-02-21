@@ -1,8 +1,8 @@
-﻿{
+{
   "name": "Weekly Work Report",
-  "short_name": "WeekReport",
-  "description": "Digitaler Arbeitsnachweis mit taeglicher Autospeicherung, Zeitberechnung und Validierung.",
-  "version": "1.3.0",
+  "short_name": "WeeklyWork",
+  "description": "Weekly Work Report: Digitaler Arbeitsnachweis mit taeglicher Autospeicherung, Zeitberechnung und Validierung.",
+  "version": "1.3.1",
   "lang": "de",
   "start_url": "./index.html",
   "scope": "./",
