@@ -1,0 +1,28 @@
+﻿GIT-PUSH-KURZANLEITUNG - Weekly Work Report (Arbeitsnachweis Web-App)
+
+1) Status pruefen
+- git status -sb
+- In VS Code bedeutet:
+  - M = Modified (geaendert, noch nicht committed)
+  - U = Untracked (neu, noch nicht zu Git hinzugefuegt)
+  - Gruene Punkte am Ordner = in diesem Ordner gibt es Aenderungen
+
+2) Aenderungen hinzufuegen (stagen)
+- Einzelne Datei: git add <datei>
+- Alles: git add .
+
+3) Commit erstellen
+- git commit -m "Aenderungen speichern"
+
+4) Push zu GitHub
+- git push origin <branch>
+
+5) Wie bekomme ich M/U weg?
+- Behalten: git add + git commit (optional danach push)
+- Verwerfen:
+  - git restore .
+  - git clean -fd
+
+Hinweis
+- Fuer lokale Tests im Browser ist kein Push noetig.
+- Wenn Aenderungen im Browser nicht sichtbar sind: Ctrl+Shift+R oder Service Worker in DevTools unregistern.

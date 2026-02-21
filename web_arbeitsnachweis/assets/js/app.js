@@ -36,7 +36,7 @@ validateBtn.addEventListener("click", () => {
 if (resetBtn) {
   resetBtn.addEventListener("click", () => {
     const confirmed = window.confirm(
-      "Soll die aktuelle Woche wirklich zurueckgesetzt werden? Alle Eingaben dieser Woche werden geloescht."
+      "Soll die aktuelle Woche wirklich zurückgesetzt werden? Alle Eingaben dieser Woche werden gelöscht."
     );
 
     if (!confirmed) {
@@ -45,7 +45,7 @@ if (resetBtn) {
 
     resetCurrentWeek();
     errorList.innerHTML = "";
-    setStatus("Aktuelle Woche wurde zurueckgesetzt.", "neutral");
+    setStatus("Aktuelle Woche wurde zurückgesetzt.", "neutral");
   });
 }
 
@@ -406,23 +406,23 @@ function validateFormData() {
     const travel = getCellInput(row, "travel").value.trim();
 
     if ((begin && !end) || (!begin && end)) {
-      errors.push(`${day} Beginn und Ende bitte gemeinsam ausfuellen.`);
+      errors.push(`${day} Beginn und Ende bitte gemeinsam ausfüllen.`);
     }
 
     if (begin && parseHHMMToMinutes(begin) == null) {
-      errors.push(`${day} Beginn ist ungueltig (HH:MM).`);
+      errors.push(`${day} Beginn ist ungültig (HH:MM).`);
     }
 
     if (end && parseHHMMToMinutes(end) == null) {
-      errors.push(`${day} Ende ist ungueltig (HH:MM).`);
+      errors.push(`${day} Ende ist ungültig (HH:MM).`);
     }
 
     if (pause && parseDurationToMinutes(pause) == null) {
-      errors.push(`${day} Pause ist ungueltig (HH:MM oder Dezimal, z. B. 0,5).`);
+      errors.push(`${day} Pause ist ungültig (HH:MM oder Dezimal, z. B. 0,5).`);
     }
 
     if (travel && parseDurationToMinutes(travel) == null) {
-      errors.push(`${day} Fahrt ist ungueltig (HH:MM oder Dezimal, z. B. 4,5).`);
+      errors.push(`${day} Fahrt ist ungültig (HH:MM oder Dezimal, z. B. 4,5).`);
     }
 
     const beginMinutes = parseHHMMToMinutes(begin);
@@ -441,7 +441,7 @@ function validateFormData() {
       travelMinutes != null &&
       endMinutes - beginMinutes - pauseMinutes - travelMinutes < 0
     ) {
-      errors.push(`${day} Summe aus Pause/Fahrt ist laenger als die Gesamtzeit.`);
+      errors.push(`${day} Summe aus Pause/Fahrt ist länger als die Gesamtzeit.`);
     }
   });
 
@@ -452,7 +452,7 @@ function renderErrors(errors) {
   errorList.innerHTML = "";
 
   if (!errors.length) {
-    setStatus("Eingaben sind gueltig.", "ok");
+    setStatus("Eingaben sind gültig.", "ok");
     return;
   }
 
@@ -470,4 +470,4 @@ function setStatus(text, mode) {
 }
 
 recalculateAllRows(false);
-setStatus("Bereit. Eingaben werden taeglich automatisch gespeichert.", "neutral");
+setStatus("Bereit. Eingaben werden täglich automatisch gespeichert.", "neutral");

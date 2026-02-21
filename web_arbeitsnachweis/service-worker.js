@@ -1,4 +1,4 @@
-const CACHE_NAME = "arbeitsnachweis-v1-4-0";
+﻿const CACHE_NAME = "arbeitsnachweis-v1-4-1";
 const ASSETS = [
   "./",
   "./index.html",
@@ -11,9 +11,7 @@ const ASSETS = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
   self.skipWaiting();
 });
 
@@ -30,27 +28,65 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+function isNetworkFirstRequest(request) {
+  if (request.mode === "navigate") {
+    return true;
+  }
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) {
+    return false;
+  }
+
+  return (
+    url.pathname.endsWith(".html") ||
+    url.pathname.endsWith(".js") ||
+    url.pathname.endsWith(".css")
+  );
+}
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") {
     return;
   }
 
+  const request = event.request;
+
+  if (isNetworkFirstRequest(request)) {
+    event.respondWith(
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+          }
+          return networkResponse;
+        })
+        .catch(() =>
+          caches
+            .match(request)
+            .then((cachedResponse) => cachedResponse || caches.match("./index.html"))
+        )
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
+    caches.match(request).then((cachedResponse) => {
       if (cachedResponse) {
         return cachedResponse;
       }
 
-      return fetch(event.request)
+      return fetch(request)
         .then((networkResponse) => {
           if (!networkResponse || networkResponse.status !== 200) {
             return networkResponse;
           }
 
-          const isSameOrigin = new URL(event.request.url).origin === self.location.origin;
+          const isSameOrigin = new URL(request.url).origin === self.location.origin;
           if (isSameOrigin) {
             const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
           }
 
           return networkResponse;
