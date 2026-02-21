@@ -1,6 +1,6 @@
-# Worktime Report Generator (Arbeitsnachweis Web)
+# Weekly Work Report (Arbeitsnachweis Web)
 
-Version: `1.2.0`
+Version: `1.3.0`
 
 Diese PWA ist die Web-Ausfuehrung des Arbeitsnachweises und enthaelt:
 - Wochenuebersicht (ohne Spalte "Warte")
@@ -21,7 +21,7 @@ Nicht enthalten:
 
 ## Benennung
 
-- GitHub-/Produktname: `Worktime Report Generator`
+- GitHub-/Produktname: `Weekly Work Report`
 - fachlicher Begriff in der App: `Arbeitsnachweis`
 
 ## Weitergabe an Kollegen

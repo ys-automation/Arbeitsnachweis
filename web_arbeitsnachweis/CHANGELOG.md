@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.0 - 2026-02-21
+- Produktname auf `Weekly Work Report` aktualisiert.
+- Web-Versionen in UI und Manifest auf `1.3.0` angehoben.
+- Service-Worker-Cache auf `arbeitsnachweis-v1-3-0` gesetzt.
+
 ## v1.2.0 - 2026-02-21
 - Produktbenennung vereinheitlicht: `Worktime Report Generator (Arbeitsnachweis)`.
 - Versionsangaben in Web-App und Manifest auf `1.2.0` aktualisiert.

@@ -1,11 +1,11 @@
-# Worktime Report Generator (Arbeitsnachweis)
+# Weekly Work Report (Arbeitsnachweis)
 
 Dieses Repository enthaelt eine professionelle Arbeitsnachweis-Loesung mit zwei Komponenten:
 
 - `src/`: Desktop-Anwendung (Python + CustomTkinter)
 - `web_arbeitsnachweis/`: installierbare Web-App (PWA) fuer Kollegen
 
-Der Name auf GitHub und nach aussen ist bewusst `Worktime Report Generator`. Der Fachbegriff `Arbeitsnachweis` bleibt in der App erhalten, damit die Nutzung im Alltag klar ist.
+Der Name auf GitHub und nach aussen ist bewusst `Weekly Work Report`. Der Fachbegriff `Arbeitsnachweis` bleibt in der App erhalten, damit die Nutzung im Alltag klar ist.
 
 ## Projektstruktur
 
