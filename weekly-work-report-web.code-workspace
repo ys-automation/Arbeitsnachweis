@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "weekly-work-report-web",
+      "path": "web_arbeitsnachweis"
+    }
+  ],
+  "settings": {
+    "explorer.compactFolders": false,
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    }
+  }
+}
