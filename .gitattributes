@@ -12,3 +12,6 @@
 *.png binary
 *.pdf binary
 *.zip binary
+
+# Keep legacy desktop sources out of GitHub language stats for this web-focused repo
+src/** linguist-vendored

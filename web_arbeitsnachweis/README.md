@@ -2,8 +2,6 @@
 
 Version: `1.3.0`
 
-Hinweis: Dieses Web-Projekt ist getrennt von der Python-Desktop-App in `src/`.
-
 Diese PWA ist die Web-Ausfuehrung des Arbeitsnachweises und enthaelt:
 - Wochenuebersicht (ohne Spalte "Warte")
 - automatische Zeitberechnung (Arbeitsstunden/Gesamt)
