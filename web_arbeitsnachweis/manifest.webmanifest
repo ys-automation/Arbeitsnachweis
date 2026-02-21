@@ -1,8 +1,8 @@
 ﻿{
-  "name": "Digitaler Arbeitsnachweis",
-  "short_name": "Arbeitsnachweis",
-  "description": "Wochenuebersicht mit taeglicher Autospeicherung, Zeitberechnung und Validierung.",
-  "version": "1.1.0",
+  "name": "Worktime Report Generator",
+  "short_name": "Worktime",
+  "description": "Digitaler Arbeitsnachweis mit taeglicher Autospeicherung, Zeitberechnung und Validierung.",
+  "version": "1.2.0",
   "lang": "de",
   "start_url": "./index.html",
   "scope": "./",

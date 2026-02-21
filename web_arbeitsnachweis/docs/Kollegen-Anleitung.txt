@@ -1,4 +1,4 @@
-﻿KOLLEGEN-ANLEITUNG - Arbeitsnachweis Web-App
+KOLLEGEN-ANLEITUNG - Worktime Report Generator (Arbeitsnachweis Web-App)
 
 1) Dateien erhalten
 - Das Paket entpacken (Ordner: web_arbeitsnachweis).

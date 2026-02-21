@@ -1,8 +1,8 @@
-﻿# Arbeitsnachweis (Web)
+# Worktime Report Generator (Arbeitsnachweis Web)
 
-Version: `1.1.0`
+Version: `1.2.0`
 
-Dieses Projekt ist eine Browser-Version deines Arbeitsnachweises und enthaelt:
+Diese PWA ist die Web-Ausfuehrung des Arbeitsnachweises und enthaelt:
 - Wochenuebersicht (ohne Spalte "Warte")
 - automatische Zeitberechnung (Arbeitsstunden/Gesamt)
 - Eingabevalidierung fuer die Wochenuebersicht
@@ -13,11 +13,16 @@ Dieses Projekt ist eine Browser-Version deines Arbeitsnachweises und enthaelt:
 
 Nicht enthalten:
 - Stammdatenbereich
-- Auszufuehrende Arbeiten
+- auszufuehrende Arbeiten
 - Reisetabelle
 - PDF-Erzeugung
 - Signatur
 - Export-/Mailfunktion
+
+## Benennung
+
+- GitHub-/Produktname: `Worktime Report Generator`
+- fachlicher Begriff in der App: `Arbeitsnachweis`
 
 ## Weitergabe an Kollegen
 
@@ -34,6 +39,15 @@ Alternative ohne BAT:
 1. Im Ordner `web_arbeitsnachweis` ein Terminal oeffnen.
 2. `python -m http.server 8080`
 3. `http://localhost:8080/` aufrufen.
+
+## Release-Paket erstellen
+
+Aus dem Repository-Root:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create_release_zip.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify_release_zip.ps1
+```
 
 ## Ordnerstruktur
 - assets/css/styles.css

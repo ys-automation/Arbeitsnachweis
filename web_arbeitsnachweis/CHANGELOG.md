@@ -1,4 +1,12 @@
-﻿# Changelog
+# Changelog
+
+## v1.2.0 - 2026-02-21
+- Produktbenennung vereinheitlicht: `Worktime Report Generator (Arbeitsnachweis)`.
+- Versionsangaben in Web-App und Manifest auf `1.2.0` aktualisiert.
+- Reproduzierbare Release-Erstellung ueber `scripts/create_release_zip.ps1` eingefuehrt.
+- Integritaetspruefung des ZIP-Pakets ueber `scripts/verify_release_zip.ps1` ergaenzt.
+- CI-Workflow fuer Syntaxcheck und automatischen ZIP-Build eingefuehrt.
+- Repository-Standards mit `.editorconfig` und `.gitattributes` ergaenzt.
 
 ## v1.1.0 - 2026-02-21
 - Taegliche Autospeicherung eingefuehrt: Eingaben werden pro Kalendertag lokal gespeichert.
