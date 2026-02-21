@@ -45,7 +45,7 @@
         <p class="hero-lead">Digitaler Arbeitsnachweis mit automatischer Zeitberechnung.</p>
         <p class="hero-meta">
           Created by Yasar Sengül
-          <span class="version-pill">v1.3.1</span>
+          <span class="version-pill">v1.4.0</span>
         </p>
       </header>
 
@@ -58,6 +58,7 @@
           <p class="hint">
             Eingaben werden pro Kalendertag automatisch gespeichert.
           </p>
+          <p class="hint">Eine neue Woche startet mit neuen Datumswerten leer.</p>
         </div>
         <div class="table-wrap">
           <table id="weekTable">
@@ -190,6 +191,9 @@
             Berechnungen aktualisieren
           </button>
           <button id="validateBtn" type="button">Eingaben prüfen</button>
+          <button id="resetBtn" class="reset-btn" type="button">
+            Woche zurücksetzen
+          </button>
         </div>
         <p id="statusText" class="status neutral">
           Noch keine Prüfung ausgeführt.

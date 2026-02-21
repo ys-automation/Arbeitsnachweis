@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.4.0 - 2026-02-21
+- Reset-Button `Woche zuruecksetzen` in der Pruefsektion hinzugefuegt.
+- Reset loescht die Eingaben der aktuell sichtbaren Woche aus Formular und lokalem Speicher.
+- Hinweistext ergaenzt: neue Woche startet mit neuen Datumswerten leer.
+- Service-Worker-Cache auf `arbeitsnachweis-v1-4-0` angehoben.
+
 ## v1.3.1 - 2026-02-21
 - Branding-Finetuning im Header (klarere Markenzeile, Version-Badge, bessere Meta-Infos).
 - App-Metadaten verbessert (Description + Favicon-Eintraege im HTML).

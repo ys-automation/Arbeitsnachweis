@@ -337,6 +337,19 @@ button:focus-visible {
   display: none;
 }
 
+.reset-btn {
+  background: transparent;
+  color: var(--danger);
+  border-color: var(--danger);
+  box-shadow: none;
+}
+
+.reset-btn:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+  box-shadow: none;
+}
+
 .status {
   border-radius: 8px;
   border: 1px solid var(--line);

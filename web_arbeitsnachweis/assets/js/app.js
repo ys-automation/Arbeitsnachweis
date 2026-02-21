@@ -8,6 +8,7 @@ const errorList = document.getElementById("errorList");
 const statusText = document.getElementById("statusText");
 const refreshBtn = document.getElementById("refreshBtn");
 const validateBtn = document.getElementById("validateBtn");
+const resetBtn = document.getElementById("resetBtn");
 const themeSelect = document.getElementById("themeSelect");
 const installBtn = document.getElementById("installBtn");
 
@@ -31,6 +32,22 @@ validateBtn.addEventListener("click", () => {
   const errors = validateFormData();
   renderErrors(errors);
 });
+
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+    const confirmed = window.confirm(
+      "Soll die aktuelle Woche wirklich zurueckgesetzt werden? Alle Eingaben dieser Woche werden geloescht."
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
+    resetCurrentWeek();
+    errorList.innerHTML = "";
+    setStatus("Aktuelle Woche wurde zurueckgesetzt.", "neutral");
+  });
+}
 
 themeSelect.addEventListener("change", () => {
   setTheme(themeSelect.value);
@@ -199,6 +216,21 @@ function persistRow(row) {
 
 function persistAllRows() {
   weekRows.forEach((row) => persistRow(row));
+}
+
+function resetCurrentWeek() {
+  weekRows.forEach((row) => {
+    INPUT_COLUMNS.forEach((key) => {
+      getCellInput(row, key).value = "";
+    });
+    getCellInput(row, "work").value = "";
+    getCellInput(row, "total").value = "";
+
+    const dateKey = row.dataset.dateKey;
+    if (dateKey) {
+      localStorage.removeItem(getDayStorageKey(dateKey));
+    }
+  });
 }
 
 function registerServiceWorker() {

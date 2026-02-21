@@ -15,6 +15,7 @@ KOLLEGEN-ANLEITUNG - Weekly Work Report (Arbeitsnachweis Web-App)
 - Zeiten in der Wochenuebersicht eintragen.
 - "Berechnungen aktualisieren" fuer automatische Summen.
 - "Eingaben pruefen" fuer Validierung.
+- "Woche zuruecksetzen" loescht die Eingaben der aktuell sichtbaren Woche.
 - Eingaben werden pro Kalendertag automatisch gespeichert (lokal im Browser).
 - Optional: Hell/Dunkel ueber den Modus-Schalter oben rechts.
 
