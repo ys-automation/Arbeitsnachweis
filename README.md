@@ -1,47 +1,41 @@
-# Weekly Work Report (Arbeitsnachweis)
+# Weekly Work Report
 
-Dieses Repository enthaelt eine professionelle Arbeitsnachweis-Loesung mit zwei Komponenten:
+Dieses Repository ist ein Monorepo mit **zwei getrennten Projekten**:
 
-- `src/`: Desktop-Anwendung (Python + CustomTkinter)
-- `web_arbeitsnachweis/`: installierbare Web-App (PWA) fuer Kollegen
+1. `src/` -> Python Desktop-App
+2. `web_arbeitsnachweis/` -> Web-App (HTML/CSS/JS, PWA)
 
-Der Name auf GitHub und nach aussen ist bewusst `Weekly Work Report`. Der Fachbegriff `Arbeitsnachweis` bleibt in der App erhalten, damit die Nutzung im Alltag klar ist.
+Sie nutzen denselben fachlichen Zweck (Arbeitsnachweis), sind aber technisch unabhaengig.
 
-## Projektstruktur
+## Welche README ist fuer welches Projekt?
 
-- `src/ruf_arbeitsnachweis.py`: Desktop-Hauptanwendung
-- `web_arbeitsnachweis/index.html`: Web-Oberflaeche
-- `web_arbeitsnachweis/assets/js/app.js`: Berechnung, Validierung, Autospeicherung
-- `scripts/create_release_zip.ps1`: reproduzierbare Erstellung des Weitergabe-ZIP
-- `scripts/verify_release_zip.ps1`: Integritaetspruefung ZIP gegen Quellordner
-- `build_release_zip.bat`: 1-Klick-Release-Paket fuer Windows
+- Python-Projekt: `src/README.md`
+- Web-Projekt: `web_arbeitsnachweis/README.md`
 
-## Schnellstart
+## Schnellstart je Projekt
 
-### Web-App
-
-1. In den Ordner `web_arbeitsnachweis` wechseln.
-2. `start_web_app.bat` starten.
-3. `http://localhost:8080/` im Browser oeffnen.
-
-### Desktop-App
-
-1. Python-Umgebung mit benoetigten Paketen bereitstellen.
-2. `python src/ruf_arbeitsnachweis.py` ausfuehren.
-
-## Release-Prozess (professionell/reproduzierbar)
+### 1) Python Desktop-App
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/create_release_zip.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify_release_zip.ps1
+python src/ruf_arbeitsnachweis.py
 ```
 
-Oder per Doppelklick:
+### 2) Web-App
 
+```powershell
+cd web_arbeitsnachweis
+start_web_app.bat
+```
+
+## Release-ZIP fuer Web-App
+
+Die folgenden Skripte betreffen nur das Web-Projekt:
+
+- `scripts/create_release_zip.ps1`
+- `scripts/verify_release_zip.ps1`
 - `build_release_zip.bat`
 
-## Qualitaet
+## Repo-Qualitaet
 
-- `.editorconfig` und `.gitattributes` fuer saubere, konsistente Dateien
-- GitHub Actions CI fuer Syntaxcheck + ZIP-Build + ZIP-Verifikation
-- Versionierung und Historie in `web_arbeitsnachweis/CHANGELOG.md`
+- `.editorconfig` und `.gitattributes` fuer konsistente Dateien
+- GitHub Actions CI mit Python-Syntaxcheck sowie Web-ZIP-Build/Verifikation
