@@ -2,6 +2,7 @@
 const DAILY_STORAGE_PREFIX = "arbeitsnachweis_day_v1";
 const INPUT_COLUMNS = ["begin", "end", "pause", "travel"];
 const WEEKDAY_SHORT_NAMES = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+const storageEnabled = canUseLocalStorage();
 
 const weekRows = Array.from(document.querySelectorAll("[data-week-row]"));
 const errorList = document.getElementById("errorList");
@@ -23,7 +24,12 @@ refreshBtn.addEventListener("click", () => {
   recalculateAllRows(true);
   persistAllRows();
   errorList.innerHTML = "";
-  setStatus("Berechnungen aktualisiert. Tagesdaten gespeichert.", "neutral");
+  setStatus(
+    storageEnabled
+      ? "Berechnungen aktualisiert. Tagesdaten gespeichert."
+      : "Berechnungen aktualisiert.",
+    "neutral"
+  );
 });
 
 validateBtn.addEventListener("click", () => {
@@ -78,15 +84,63 @@ weekRows.forEach((row) => {
 });
 
 function initializeTheme() {
-  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  const savedTheme = getStoredValue(THEME_STORAGE_KEY);
   const theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
   setTheme(theme);
 }
 
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem(THEME_STORAGE_KEY, theme);
+  setStoredValue(THEME_STORAGE_KEY, theme);
   themeSelect.value = theme;
+}
+
+function canUseLocalStorage() {
+  const testKey = "__arbeitsnachweis_storage_test__";
+  try {
+    window.localStorage.setItem(testKey, "1");
+    window.localStorage.removeItem(testKey);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function getStoredValue(key) {
+  if (!storageEnabled) {
+    return null;
+  }
+
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function setStoredValue(key, value) {
+  if (!storageEnabled) {
+    return false;
+  }
+
+  try {
+    window.localStorage.setItem(key, value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function removeStoredValue(key) {
+  if (!storageEnabled) {
+    return;
+  }
+
+  try {
+    window.localStorage.removeItem(key);
+  } catch {
+    // Ignore storage errors in restricted browser environments.
+  }
 }
 
 function initializeInstallPrompt() {
@@ -174,7 +228,7 @@ function getDayStorageKey(dateKey) {
 }
 
 function readDayEntry(dateKey) {
-  const raw = localStorage.getItem(getDayStorageKey(dateKey));
+  const raw = getStoredValue(getDayStorageKey(dateKey));
   if (!raw) {
     return null;
   }
@@ -206,12 +260,12 @@ function persistRow(row) {
 
   const storageKey = getDayStorageKey(dateKey);
   if (!hasValue) {
-    localStorage.removeItem(storageKey);
+    removeStoredValue(storageKey);
     return;
   }
 
   entry.updatedAt = new Date().toISOString();
-  localStorage.setItem(storageKey, JSON.stringify(entry));
+  setStoredValue(storageKey, JSON.stringify(entry));
 }
 
 function persistAllRows() {
@@ -228,13 +282,16 @@ function resetCurrentWeek() {
 
     const dateKey = row.dataset.dateKey;
     if (dateKey) {
-      localStorage.removeItem(getDayStorageKey(dateKey));
+      removeStoredValue(getDayStorageKey(dateKey));
     }
   });
 }
 
 function registerServiceWorker() {
-  if (!("serviceWorker" in navigator)) {
+  const protocol = window.location.protocol;
+  const isHttpContext = protocol === "http:" || protocol === "https:";
+
+  if (!isHttpContext || !("serviceWorker" in navigator)) {
     return;
   }
 
@@ -470,4 +527,9 @@ function setStatus(text, mode) {
 }
 
 recalculateAllRows(false);
-setStatus("Bereit. Eingaben werden täglich automatisch gespeichert.", "neutral");
+setStatus(
+  storageEnabled
+    ? "Bereit. Eingaben werden täglich automatisch gespeichert."
+    : "Bereit. Browser blockiert lokalen Speicher; Eingaben sind nur temporaer.",
+  "neutral"
+);

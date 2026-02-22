@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = "arbeitsnachweis-v1-4-1";
+﻿const CACHE_NAME = "arbeitsnachweis-v1-5-0";
 const ASSETS = [
   "./",
   "./index.html",
@@ -95,3 +95,4 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+

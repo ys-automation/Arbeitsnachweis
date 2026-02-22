@@ -1,6 +1,6 @@
 # Weekly Work Report (Arbeitsnachweis Web)
 
-Version: `1.4.0`
+Version: `1.5.0`
 
 Diese PWA ist die Web-Ausfuehrung des Arbeitsnachweises und enthaelt:
 - Wochenuebersicht (ohne Spalte "Warte")
@@ -19,26 +19,39 @@ Nicht enthalten:
 - Signatur
 - Export-/Mailfunktion
 
+## Kundenbetrieb (empfohlen)
+
+Fuer Vermarktung und echten Betrieb wird die App per HTTPS gehostet.
+Empfohlene Standardroute in diesem Repository:
+
+1. GitHub `Settings -> Pages -> Build and deployment`
+2. `Source: GitHub Actions` aktivieren
+3. Push auf `main` ausfuehren
+4. Deployment laeuft automatisch ueber `.github/workflows/deploy-pages.yml`
+
+Kunden-URL:
+- `https://<github-name>.github.io/<repo-name>/`
+
+Vorteil:
+- kein Python
+- kein localhost
+- keine lokalen IT-Policy-Probleme auf Kundengeraeten
+
 ## Benennung
 
 - GitHub-/Produktname: `Weekly Work Report`
 - fachlicher Begriff in der App: `Arbeitsnachweis`
 
-## Weitergabe an Kollegen
+## Lokaler Testmodus (intern)
 
-Du kannst den Ordner `web_arbeitsnachweis` direkt weitergeben (ZIP oder USB).
-Alles Notwendige ist in diesem Ordner enthalten, inklusive Logo und Icons.
+1. `start_web_app.bat` starten.
+2. Wenn ein lokaler Server verfuegbar ist, oeffnet die App auf `http://127.0.0.1:8080/`.
+3. Ohne Server faellt die BAT auf Direktstart (`index.html`) zurueck.
 
-## Start beim Kollegen
-
-1. Ordner `web_arbeitsnachweis` entpacken.
-2. `start_web_app.bat` doppelklicken.
-3. Im Browser auf `App installieren` klicken (Edge/Chrome).
-
-Alternative ohne BAT:
-1. Im Ordner `web_arbeitsnachweis` ein Terminal oeffnen.
-2. `python -m http.server 8080`
-3. `http://localhost:8080/` aufrufen.
+Einschraenkung im Direktstart (`file://`):
+- keine PWA-Installation
+- kein Service-Worker-Offline-Cache
+- bei restriktiven Firmenbrowsern evtl. kein persistenter lokaler Speicher
 
 ## Release-Paket erstellen
 
@@ -55,6 +68,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify_release_zip.p
 - assets/icons/icon-192.png + icon-512.png
 - assets/logos/transnova_logo.png
 - docs/Kollegen-Anleitung.txt + .pdf
+- docs/Kunden-Deployment-GitHub-Pages.md
 
 ## Release-Historie
 - Siehe `CHANGELOG.md`

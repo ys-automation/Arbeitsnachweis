@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.5.0 - 2026-02-22
+- Produktiver Auslieferungsweg auf gehosteten HTTPS-Betrieb ausgerichtet (GitHub Pages Workflow).
+- Deployment-Automation ueber `.github/workflows/deploy-pages.yml` hinzugefuegt.
+- Kollegendoku auf Kunden-URL statt localhost umgestellt.
+- Startskript robust gemacht: automatische Direktstart-Fallbacks bei fehlendem/gesperrtem lokalem Server.
+- Service-Worker-Registrierung fuer `file://` abgesichert.
+- Lokale Speicherung in restriktiven Browserumgebungen abgesichert (kein Absturz bei blockiertem `localStorage`).
+- Versionsstand in UI/Manifest auf `1.5.0` angehoben.
+- Service-Worker-Cache auf `arbeitsnachweis-v1-5-0` angehoben.
+
 ## v1.4.0 - 2026-02-21
 - Reset-Button `Woche zuruecksetzen` in der Pruefsektion hinzugefuegt.
 - Reset loescht die Eingaben der aktuell sichtbaren Woche aus Formular und lokalem Speicher.
